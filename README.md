@@ -24,16 +24,16 @@
 |REMOTE-PATH| cesta k **souboru nebo adresáři** na serveru |
 |LOCAL PATH | cesta v lokálním souborovém systému, povinné pro akci PUT |
 
-##### $ ftrest DELETE /USER-ACCOUNT/REMOTE-PATH?type=[file|folder] HTTP/1.1
-* Smazání souboru/adresáře
-
 ##### **PŘÍKLAD**
 
 ##### $ ftrest PUT http://localhost:12345/tonda/foo/bar/doc.pdf ~/doc.pdf
 * Nahrání souboru doc.pdf na serveru do adresáře bar
 
 
-###Rozšíření
+##### $ ftrest DELETE /USER-ACCOUNT/REMOTE-PATH?type=[file|folder] HTTP/1.1
+* Smazání souboru/adresáře
+
+### Rozšíření
 Bylo implementováno rozšíření autorizace uživatelů. To je řešeno následujícím způsobem:
 Uživatel spustí klientskou aplikaci, ta se jej dotáže na heslo, při správném zadání všech parametrů se hlavička zašle na server, ten ji zpracuje otevřením souboru **userpw**, který **MUSÍ** být umístěn v root složce, pokud zde není, server není možné spustit. Samozřejmostí je automatický zákaz stahování všech souborů s názvem **userpw**.
 Po přijetí hlavičky server provede kontrolu validity a buď pokračuje zpracováním příkazu, či vrátí chybové hlášení
