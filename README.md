@@ -80,24 +80,8 @@ Tato hlavička musí obsahovat následující položky:
 | 400 | Bad Request     |    při přístupu k objektu jiného typu než uvedeného v požadavku (požadavek na operaci nad souborem, ale REMOTE-PATH ukazuje na adresář), špatná hlavička, atd. |
 | 401 | Unauthorized | uživatel nebyl autorizován, bylo zadáno špatné heslo |
 | 404     | Not Found     |   objekt (soubor/adresář) v požadavku neexistuje |
+
 ***
-
-V každé zprávě ze serveru je také zasílán adekvátní výsledek operace, která se v klientovi tiskne na standardní výstup. Klient pouze výsledek tiskne, nemusí jej nijak kontrolovat, kontrolu zaručuje server. Určité operace jsou však zasílány vždy pouze a jen s určitým HTTP kódem. 
-Níže je jejich soupis:
-## Výsledky operací
-| HTTP | Text | Výsledek |
-| :--- | :---: | ------: |
-| 200 | Success. | Operace byla úspěšně dokončena |
-| 401 | Unauthorized. | Zadané heslo nebylo validní |
-| 404 | User Account Not Found. | Zadaný uživatel neexistuje |
-| 404 | Directory not found. | REMOTE-PATH neukazuje na žádný existující adresář při použití operace lst, rmd |
-| 404 | File not found. | REMOTE-PATH neukazuje na žádný existující objekt při použití operace del, get, případně i put (přímá kontrola u klienta) |
-| 400 | Already exists. | REMOTE-PATH ukazuje na standardní adresář/soubor, který již existuje a je použita operace mkd či put |
-| 400 | Not a file. | REMOTE-PATH neukazuje na standardní soubor, ale je použita operace del, get (operace nad soubory) |
-| 400 | Not a directory. | REMOTE-PATH ukazuje na soubor, ale je použita operace lst, rmd (operace nad složkami) |
-| 400 | Directory not empty. | REMOTE-PATH ukazuje na adresář, který není prázdný a je použita operace rmdir |
-| 400 | Unknown error. | Došlo k jiné, než výše zmíněné chybě, není známa přesná příčina problému, nebo došlo k operaci, která nebyla externě povolena, např. mazání uživatelů |
-
 
 ## Server **ftrestd**
 
@@ -125,5 +109,23 @@ Níže je jejich soupis:
 |Content-Length | délka obsahu odpovědi|
 |Content-Encoding | typ kódování obsahu (identity, gzip, deflate)|
 
-**19.3.2017**
+
+V každé zprávě ze serveru je také zasílán adekvátní výsledek operace, která se v klientovi tiskne na standardní výstup. Klient pouze výsledek tiskne, nemusí jej nijak kontrolovat, kontrolu zaručuje server. Určité operace jsou však zasílány vždy pouze a jen s určitým HTTP kódem.
+Níže je jejich soupis:
+## Výsledky operací
+| HTTP | Text | Výsledek |
+| :--- | :---: | ------: |
+| 200 | Success. | Operace byla úspěšně dokončena |
+| 401 | Unauthorized. | Zadané heslo nebylo validní |
+| 404 | User Account Not Found. | Zadaný uživatel neexistuje |
+| 404 | Directory not found. | REMOTE-PATH neukazuje na žádný existující adresář při použití operace lst, rmd |
+| 404 | File not found. | REMOTE-PATH neukazuje na žádný existující objekt při použití operace del, get, případně i put (přímá kontrola u klienta) |
+| 400 | Already exists. | REMOTE-PATH ukazuje na standardní adresář/soubor, který již existuje a je použita operace mkd či put |
+| 400 | Not a file. | REMOTE-PATH neukazuje na standardní soubor, ale je použita operace del, get (operace nad soubory) |
+| 400 | Not a directory. | REMOTE-PATH ukazuje na soubor, ale je použita operace lst, rmd (operace nad složkami) |
+| 400 | Directory not empty. | REMOTE-PATH ukazuje na adresář, který není prázdný a je použita operace rmdir |
+| 400 | Unknown error. | Došlo k jiné, než výše zmíněné chybě, není známa přesná příčina problému, nebo došlo k operaci, která nebyla externě povolena, např. mazání uživatelů |
+
+
+**30.3.2017**
 
