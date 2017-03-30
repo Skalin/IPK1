@@ -53,7 +53,7 @@ Během autorizace nedochází k přenosu přes HTTPS, také není účelem proje
 ## HTTP hlavička požadavku
 Tato hlavička musí obsahovat následující položky:
 | Označení | Text |
-| :------------- |-------------:|
+| :------------- | -------------: |
 |Host| Adresa hostitele |
 |Date | Timestamp klienta v době vytvoření požadavku|
 |Accept | Požadavaný typ obsahu pro odpověď |
