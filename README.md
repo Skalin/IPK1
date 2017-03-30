@@ -16,7 +16,7 @@
 | **make clean** | dojde ke smazání všech zastaralých verzí programů |
 
 
-## Klient = **ftrest**
+## Klient **ftrest**
 ##### $ **ftrest COMMAND REMOTE-PATH [LOCAL-PATH]**
 | Parametr | Popis |
 |:-----:| :-----:|
