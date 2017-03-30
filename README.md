@@ -60,7 +60,7 @@ Tato hlavička musí obsahovat následující položky:
 |Accept-Encoding | Podporový způsob kódování dat (identity, gzip, deflate)|
 |Content-Type | MIME typ obsahu požadavku (pro PUT či POST)|
 |Content-Length | Délka obsahu požadavku (pro PUT či POST)|
-|Authorization | typ a Uživatel a heslo ve formátu **heslo**|
+|Authorization | typ a heslo ve formátu **Basic heslo** (neodpovídá úplně specifikaci)|
 
 ## Základní příkazy
 | Kód      | Text         |
