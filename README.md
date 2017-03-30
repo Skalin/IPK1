@@ -40,7 +40,6 @@ Po přijetí hlavičky server provede kontrolu validity a buď pokračuje zpraco
 Během autorizace nedochází k přenosu přes HTTPS, také není účelem projektu poukázat na možnosti a nemožnosti zabezpečení. Z klienta se zasílá Authorization tag: Basic heslo, nedochází však k zakódování do soustavy 64, základní knihovny pro kódování do této soustavy nejsou přítomny na referenčním stroji a formát tohoto kódování je stejně bezpečný jako nekódování samotné. Pokud bychom chtěli tuto komunikaci dostatečně zabezpečit, byli bychom nuceni užít knihovny funkce sha256 pro dostatečně zabezpečení hesla. Pro náš projekt však stačí heslo nezakodované.
 
 ## Implementace klienta
-**TODO**
 * Klient provede kontrolu agrumentů a požádá od uživatele o heslo.
 * Vytvoří se základní zpráva obsahující HTTP hlavičku dle argumentů, konec hlavičky je vždy posloupnost znaků "**\r\n\r\n**". V případě, že je použit příkaz **put**, je za konec hlavičky přiložen i obsah odesílaného souboru. Klient však nemůže odesílat zprávy delší než 1024 znaků. To je za účelem snížení náporu klienta na server a tedy zkrácení jeho nutných požadavků.
 * Následně se pomocí funkce **gethostbyname()** získá adresa serveru (dočasně uložena ve struktuře **hostent**).
@@ -52,6 +51,9 @@ Během autorizace nedochází k přenosu přes HTTPS, také není účelem proje
 
 ## HTTP hlavička požadavku
 Tato hlavička musí obsahovat následující položky:
+
+
+
 | Označení | Text |
 | :------------- | -------------: |
 |Host| Adresa hostitele |
