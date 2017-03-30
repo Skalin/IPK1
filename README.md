@@ -8,7 +8,7 @@
 
 ##### Překlad programů je zajištěn za pomocí makefile. 
 | make příkazy | Operace |
-| :------------ | --------:|
+| :-------------------------- | --------:|
 | **make** | překlad klienta i serveru, klient je spustitelný jako **ftrest**, server jako **ftrestd**, před překladem se smažou veškeré předchozí verze programů |
 | **make all** | alias pro příkaz **make** |
 | **make ftrest** | překlad klienta, spustitelný jako **ftrest** |
